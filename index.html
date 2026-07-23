@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Company Header Details — Client Intake Checklist</title>
+<style>
+  body {
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  h2 { font-size: 18px; margin-top: 36px; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 24px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0 32px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #d0d0d0;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+  }
+  td.num { text-align: center; width: 30px; }
+  .req { font-weight: 600; color: #b45309; }
+  .opt { color: #555; }
+</style>
+</head>
+<body>
+
+<h1>Company Header Details — Client Intake Checklist</h1>
+<p class="subtitle">English / Português (Brasil) / 日本語 — Santander CNAB 240 file header, company (payer) fields only.</p>
+
+<h2>Field-by-Field Table</h2>
+<table>
+<thead>
+<tr>
+  <th style="width:24px;">#</th>
+  <th>Field (English)</th>
+  <th>Campo (Português)</th>
+  <th>項目（日本語）</th>
+  <th style="width:80px;">Required?</th>
+  <th>Notes (English)</th>
+  <th>Notas (Português)</th>
+  <th>備考（日本語）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="num">1</td>
+  <td>Company Name</td>
+  <td>Nome da Empresa</td>
+  <td>会社名</td>
+  <td class="req">Required</td>
+  <td>Full legal company name. Converted to uppercase. Max 30 characters.</td>
+  <td>Razão social completa. Convertida para maiúsculas. Máx. 30 caracteres.</td>
+  <td>会社の正式名称。大文字に変換されます。最大30文字。</td>
+</tr>
+<tr>
+  <td class="num">2</td>
+  <td>CNPJ</td>
+  <td>CNPJ</td>
+  <td>CNPJ（法人番号）</td>
+  <td class="req">Required</td>
+  <td>14-digit Brazilian company tax ID.</td>
+  <td>Número de 14 dígitos do CNPJ.</td>
+  <td>ブラジル法人納税者番号（14桁）。</td>
+</tr>
+<tr>
+  <td class="num">3</td>
+  <td>Agreement Code (Convênio)</td>
+  <td>Código do Convênio</td>
+  <td>契約コード（コンヴェニオ）</td>
+  <td class="req">Required</td>
+  <td>Assigned by Santander when the company contracts file-based payments. Client must get this from their Santander rep or CNAB contract — not something they'll know offhand.</td>
+  <td>Atribuído pelo Santander ao contratar pagamentos via arquivo. O cliente deve obter com o gerente Santander ou no contrato CNAB — normalmente não sabido de memória.</td>
+  <td>ファイル支払いサービス契約時に Santander が付与。Santander 担当者または CNAB 契約書から入手が必要 — すぐには分からない項目。</td>
+</tr>
+<tr>
+  <td class="num">4</td>
+  <td>Santander Branch Number</td>
+  <td>Número da Agência Santander</td>
+  <td>Santander 支店番号</td>
+  <td class="req">Required</td>
+  <td>Numeric. Zero-padded to 5 digits.</td>
+  <td>Numérico. Preenchido com zeros até 5 dígitos.</td>
+  <td>数字。5桁になるようゼロ埋め。</td>
+</tr>
+<tr>
+  <td class="num">5</td>
+  <td>Branch Check Digit</td>
+  <td>Dígito Verificador da Agência</td>
+  <td>支店チェックデジット</td>
+  <td class="opt">Optional</td>
+  <td>Single digit, if issued by the bank.</td>
+  <td>Um dígito, se emitido pelo banco.</td>
+  <td>銀行から発行されていれば1桁。</td>
+</tr>
+<tr>
+  <td class="num">6</td>
+  <td>Account Number</td>
+  <td>Número da Conta</td>
+  <td>口座番号</td>
+  <td class="req">Required</td>
+  <td>Numeric. Zero-padded to 12 digits.</td>
+  <td>Numérico. Preenchido com zeros até 12 dígitos.</td>
+  <td>数字。12桁になるようゼロ埋め。</td>
+</tr>
+<tr>
+  <td class="num">7</td>
+  <td>Account Check Digit</td>
+  <td>Dígito Verificador da Conta</td>
+  <td>口座チェックデジット</td>
+  <td class="req">Required</td>
+  <td>Single digit.</td>
+  <td>Um dígito.</td>
+  <td>1桁の数字。</td>
+</tr>
+<tr>
+  <td class="num">8</td>
+  <td>Company Address (Street)</td>
+  <td>Endereço (Logradouro)</td>
+  <td>会社住所（通り）</td>
+  <td class="req">Required</td>
+  <td>Street name. Max 30 characters.</td>
+  <td>Nome da rua/avenida. Máx. 30 caracteres.</td>
+  <td>通りの名称。最大30文字。</td>
+</tr>
+<tr>
+  <td class="num">9</td>
+  <td>Street Number</td>
+  <td>Número do Endereço</td>
+  <td>番地</td>
+  <td class="req">Required</td>
+  <td>Numeric street number.</td>
+  <td>Número do endereço.</td>
+  <td>番地の数字。</td>
+</tr>
+<tr>
+  <td class="num">10</td>
+  <td>Complement</td>
+  <td>Complemento</td>
+  <td>補足</td>
+  <td class="opt">Optional</td>
+  <td>Suite, floor, unit, etc. Max 15 characters.</td>
+  <td>Sala, andar, unidade, etc. Máx. 15 caracteres.</td>
+  <td>部屋番号、階数など。最大15文字。</td>
+</tr>
+<tr>
+  <td class="num">11</td>
+  <td>City</td>
+  <td>Cidade</td>
+  <td>都市</td>
+  <td class="req">Required</td>
+  <td>Max 20 characters.</td>
+  <td>Máx. 20 caracteres.</td>
+  <td>最大20文字。</td>
+</tr>
+<tr>
+  <td class="num">12</td>
+  <td>Postal Code (CEP)</td>
+  <td>CEP</td>
+  <td>郵便番号（CEP）</td>
+  <td class="req">Required</td>
+  <td>8 digits total (split 5+3 inside the file).</td>
+  <td>Total de 8 dígitos (dividido em 5+3 no arquivo).</td>
+  <td>合計8桁（ファイル内で前5桁・後3桁に分割）。</td>
+</tr>
+<tr>
+  <td class="num">13</td>
+  <td>State (UF)</td>
+  <td>Estado (UF)</td>
+  <td>州</td>
+  <td class="req">Required</td>
+  <td>2-letter code, e.g. SP, RJ.</td>
+  <td>Sigla de 2 letras, ex.: SP, RJ.</td>
+  <td>2文字の州略号（例：SP、RJ）。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Simple Intake List</h2>
+<table>
+<thead>
+<tr>
+  <th style="width:24px;">#</th>
+  <th>English</th>
+  <th>Português</th>
+  <th>日本語</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="num">1</td>
+  <td>Company legal name</td>
+  <td>Razão social da empresa</td>
+  <td>会社の正式名称</td>
+</tr>
+<tr>
+  <td class="num">2</td>
+  <td>CNPJ</td>
+  <td>CNPJ</td>
+  <td>CNPJ</td>
+</tr>
+<tr>
+  <td class="num">3</td>
+  <td>Santander agreement/convênio code</td>
+  <td>Código de convênio Santander</td>
+  <td>Santander の契約コード（コンヴェニオ）</td>
+</tr>
+<tr>
+  <td class="num">4</td>
+  <td>Santander branch number (+ check digit, if any)</td>
+  <td>Número da agência Santander (+ dígito verificador, se houver)</td>
+  <td>Santander の支店番号（該当する場合はチェックデジットも）</td>
+</tr>
+<tr>
+  <td class="num">5</td>
+  <td>Santander account number + check digit</td>
+  <td>Número da conta Santander + dígito verificador</td>
+  <td>Santander の口座番号とチェックデジット</td>
+</tr>
+<tr>
+  <td class="num">6</td>
+  <td>Registered company address (street, number, complement, city, postal code, state)</td>
+  <td>Endereço registrado da empresa (rua, número, complemento, cidade, CEP, estado)</td>
+  <td>登記上の会社住所（通り、番地、補足、都市、郵便番号、州）</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Notes</h2>
+<table>
+<thead>
+<tr>
+  <th style="width:160px;">Topic</th>
+  <th>English</th>
+  <th>Português</th>
+  <th>日本語</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><b>Convênio flag</b></td>
+  <td>The Convênio is the item people most often don't have on hand — clients won't know it without checking their Santander contract or asking their bank relationship manager. Worth flagging separately so it doesn't hold up the process.</td>
+  <td>O Código do Convênio é o item que as pessoas mais frequentemente não têm em mãos — o cliente não saberá sem consultar o contrato Santander ou o gerente de relacionamento. Vale destacar separadamente para não atrasar o processo.</td>
+  <td>契約コード（コンヴェニオ）は、多くの場合すぐに用意できない項目です。Santander との契約書を確認するか銀行担当者に問い合わせない限り、クライアントは把握していません。手続きが滞らないよう別途強調することをおすすめします。</td>
+</tr>
+<tr>
+  <td><b>Everything else is automatic</b></td>
+  <td>Everything else in the file header (bank code, service type, TED codes, dates, sequence numbers) is fixed or calculated automatically — clients never need to provide these.</td>
+  <td>Todo o restante do cabeçalho (código do banco, tipo de serviço, códigos TED, datas, números sequenciais) é fixo ou calculado automaticamente — o cliente nunca precisa fornecer.</td>
+  <td>ファイルヘッダーのその他の項目（銀行コード、サービス種別、TED関連コード、日付、連番など）はすべて固定値または自動計算です。クライアントが入力する必要はありません。</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
